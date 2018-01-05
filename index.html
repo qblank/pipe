@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>带文字的饼图</title>
+    <style>
+        canvas {
+            border:1px solid red;
+        }
+    </style>
+    <script src="js/pipe.js"></script>
+</head>
+<body>
+<canvas id="cvs" width="500" height="500"></canvas>
+<script>
+    var cvs = document.getElementById('cvs');
+    var ctx = cvs.getContext('2d');
+
+    ctx.font = "28px 微软雅黑";
+    ctx.fillStyle = "deeppink";
+    ctx.fillText("现代人的饮食",120,60);
+    ctx.font = "16px 微软雅黑";
+
+    var pipe = new Pipe( 200, 200, 80, [
+        {
+            val: 10,
+            msg: '米饭'
+        },
+        {
+            val: 30,
+            msg: '面条'
+        },
+        {
+            val: 50,
+            msg: '馒头'
+        },
+        {
+            val: 50,
+            msg: '豆腐脑'
+        },
+        {
+            val: 50,
+            msg: '饺子'
+        },
+        {
+            val: 90,
+            msg: '汤圆'
+        },
+    ] );
+    pipe.draw();
+</script>
+</body>
+</html>
